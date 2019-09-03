@@ -1,0 +1,49 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" 
+	xmlns:sap.ui.layout.form="sap.ui.layout.form" 
+	xmlns:sap.ui.core="sap.ui.core" 
+	xmlns="sap.m"
+	controllerName="ovly.star_wars.controller.View1" displayBlock="true">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<!--<Input  id="identificador" placeholder="ID de personagem" value="1"/>-->
+						<!--<Button text="Buscar"  icon="sap-icon://search" press="onPressBuscar" />-->
+						
+						<!--<SearchField id="identificador" placeholder="ID do personagem" value="1" search="onPressBuscar" />-->
+						
+						<Slider mim="1" max="50" value="1" id="identificador" change="onPressBuscar" />
+						
+						
+						<sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
+							<sap.ui.layout.form:content>
+								<sap.ui.core:Title text="Dados Básicos"/>
+									<Label text="Nome"/>
+									<Input value="{/name}"/>
+									<Label text="Altura"/>
+									<Input value="{/height}"/>
+									<Label text="Olhos"/>
+									<Input value="{/eye_color}"/>
+								
+								<sap.ui.core:Title text="Filmes"/>
+									<Label text="Lista de Filmes"/>
+									<Select items="{/films}">
+										<core:Item xmlns:core="sap.ui.core" text="{}" />
+									</Select>
+							</sap.ui.layout.form:content>
+						</sap.ui.layout.form:SimpleForm>
+					</content>
+					<footer>
+						<Toolbar width="100%" id="toolbar1">
+							<content><ToolbarSpacer id="spacer0"/>
+								<Button xmlns="sap.m" text="Documentação" icon="sap-icon://message-information" press="onPressDocs"/>
+								<ToolbarSpacer id="spacer1"/>
+							</content>
+						</Toolbar>
+					</footer>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
