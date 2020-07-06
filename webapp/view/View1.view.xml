@@ -10,14 +10,13 @@
 					<content>
 						<!--<Input  id="identificador" placeholder="ID de personagem" value="1"/>-->
 						<!--<Button text="Buscar"  icon="sap-icon://search" press="onPressBuscar" />-->
-						
 						<!--<SearchField id="identificador" placeholder="ID do personagem" value="1" search="onPressBuscar" />-->
 						
-						<Slider mim="1" max="50" value="1" id="identificador" change="onPressBuscar" />
+						<StepInput visible="{= ${device>/system/phone} ? false : true}" value="{options>/id}" change="onPressBuscar" class="sapUiMediumMarginBeginEnd" />
+						<Slider visible="{device>/system/phone}" value="{options>/id}" min="1" max="50" liveChange="onPressBuscar" class="sapUiResponsiveMargin" />
 						
-						
-						<sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" id="form0">
-							<sap.ui.layout.form:content>
+						<sap.ui.layout.form:SimpleForm  editable="true" layout="ResponsiveGridLayout" busyIndicatorDelay="0" busy="{options>/ocupado}" id="form">
+							<sap.ui.layout.form:content> 
 								<sap.ui.core:Title text="Dados Básicos"/>
 									<Label text="Nome"/>
 									<Input value="{/name}"/>
